@@ -15,13 +15,6 @@ public class InputController : MonoBehaviour, IDragHandler
         Debug.Log("InputController start");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-   
-
     public void OnDrag(PointerEventData eventData)
     {
         onDrag?.Invoke();
