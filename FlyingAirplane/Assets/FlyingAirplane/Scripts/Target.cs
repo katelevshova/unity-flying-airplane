@@ -11,11 +11,11 @@ public class Target : MonoBehaviour
     void Start()
     {
         Debug.Log("Target start");
-        InputController.onDrag += DragTarget; 
+        InputController.OnDragTarget += DragTarget; 
     }
 
     // or use void OnMouseDrag()
-    public void DragTarget()
+    public void DragTarget(Vector3 targetPosition)
     {
         Debug.Log("->DragTarget");
 
@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
 
     private void OnDisable()
     {
-        InputController.onDrag -= DragTarget;
+        InputController.OnDragTarget -= DragTarget;
     }    
 
     void OnMouseDown()
