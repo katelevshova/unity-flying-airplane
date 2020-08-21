@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private Vector3 screenPoint;
-    private Vector3 offset;
+    private Vector3 _screenPoint;
+    private Vector3 _offset;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Target start");
-        GameController.OnDragTarget += DragTarget;
+        Debug.Log("[Target] start");
         GameController.OnMouseDownTarget += OnMouseDownTargetHandler;
+        GameController.OnDragTarget += OnDragTargetHandler;
     }
 
-    // or use void OnMouseDrag()
-    public void DragTarget(Target target)
+    private void OnMouseDownTargetHandler()
     {
-        Debug.Log("->DragTarget");
+        Debug.Log("[Target]->OnMouseDownTargetHandler");
+        _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
+    }
 
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+    public void OnDragTargetHandler(Target target)
+    {
+        Debug.Log("[Target]->OnDragTargetHandler");
 
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
+
+        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + _offset;
         transform.position = curPosition;
     }
 
     private void OnDisable()
     {
-        GameController.OnDragTarget -= DragTarget;
+        GameController.OnDragTarget -= OnDragTargetHandler;
         GameController.OnMouseDownTarget -= OnMouseDownTargetHandler;
-    }    
-
-    private void OnMouseDownTargetHandler()
-    {
-        Debug.Log("Target OnMouseDown");
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 }

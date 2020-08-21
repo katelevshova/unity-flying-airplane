@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(BoxCollider2D))]   // for working OnMouse
 public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public delegate void ActionDrag(Target target);
@@ -15,10 +16,9 @@ public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
     public Airplane airplane;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("GameController start");
+        Debug.Log("[GameController] start");
     }
 
     public void OnDrag(PointerEventData eventData)

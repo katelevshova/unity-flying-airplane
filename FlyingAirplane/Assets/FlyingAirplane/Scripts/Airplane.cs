@@ -6,24 +6,23 @@ public class Airplane : MonoBehaviour
 {
     public float rotationSpeed = 140f;
     public float speed = 1f;
-    public float delay = 1;
-    private bool isNotDraggingMode = true;
+    private bool _isNotDraggingMode = true;
 
     void Start()
     {
-        Debug.Log("Airplane start");
+        Debug.Log("[Airplane] start");
         GameController.OnDragTarget += FlyTowards;
         GameController.OnEndDragTarget += FreeFlying; 
     }
 
     private void FreeFlying()
     {
-        isNotDraggingMode = true;
+        _isNotDraggingMode = true;
     }
 
     private void FlyTowards(Target target)
     {
-        isNotDraggingMode = false;
+        _isNotDraggingMode = false;
 
         Vector3 directionToFace = (target.transform.position - transform.position).normalized;
         var dotProd = Vector3.Dot(transform.right, directionToFace);
@@ -35,7 +34,7 @@ public class Airplane : MonoBehaviour
 
     public void Update()
     {
-        if (isNotDraggingMode)
+        if (_isNotDraggingMode)
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
