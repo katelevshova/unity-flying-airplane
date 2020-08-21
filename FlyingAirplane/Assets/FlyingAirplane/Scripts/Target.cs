@@ -11,7 +11,8 @@ public class Target : MonoBehaviour
     void Start()
     {
         Debug.Log("Target start");
-        GameController.OnDragTarget += DragTarget; 
+        GameController.OnDragTarget += DragTarget;
+        GameController.OnMouseDownTarget += OnMouseDownTargetHandler;
     }
 
     // or use void OnMouseDrag()
@@ -28,10 +29,12 @@ public class Target : MonoBehaviour
     private void OnDisable()
     {
         GameController.OnDragTarget -= DragTarget;
+        GameController.OnMouseDownTarget -= OnMouseDownTargetHandler;
     }    
 
-    void OnMouseDown()
+    private void OnMouseDownTargetHandler()
     {
+        Debug.Log("Target OnMouseDown");
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
