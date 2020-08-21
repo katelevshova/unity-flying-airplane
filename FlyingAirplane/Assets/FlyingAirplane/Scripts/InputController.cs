@@ -5,22 +5,25 @@ using UnityEngine.EventSystems;
 
 public class InputController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    public delegate void ActionDrag(Vector3 targetPosition);
+    public delegate void ActionDrag(Target target);
     public delegate void ActionEndDrag();
     public static event ActionDrag OnDragTarget;
     public static event ActionEndDrag OnEndDragTarget;
-    public GameObject target;
+    public Target target;
+    public Airplane airplane;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("InputController start");
+        airplane.SetTarget(target);
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        OnDragTarget?.Invoke(target.transform.position);
+        OnDragTarget?.Invoke(target);
     }
 
     public void OnEndDrag(PointerEventData eventData)

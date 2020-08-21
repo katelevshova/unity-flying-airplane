@@ -150,7 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c86a4a2d58834047827382aa779e6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1805389894}
+  target: {fileID: 1805389899}
+  airplane: {fileID: 1752028527}
 --- !u!4 &392600524
 Transform:
   m_ObjectHideFlags: 0
@@ -631,7 +632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 140
   speed: 1
-  target: {fileID: 1805389894}
 --- !u!4 &1752028528
 Transform:
   m_ObjectHideFlags: 0

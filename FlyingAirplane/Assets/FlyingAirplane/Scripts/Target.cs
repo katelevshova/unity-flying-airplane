@@ -15,7 +15,7 @@ public class Target : MonoBehaviour
     }
 
     // or use void OnMouseDrag()
-    public void DragTarget(Vector3 targetPosition)
+    public void DragTarget(Target target)
     {
         Debug.Log("->DragTarget");
 
