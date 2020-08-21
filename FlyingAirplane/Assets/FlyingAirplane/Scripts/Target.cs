@@ -11,7 +11,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         Debug.Log("Target start");
-        InputController.OnDragTarget += DragTarget; 
+        GameController.OnDragTarget += DragTarget; 
     }
 
     // or use void OnMouseDrag()
@@ -27,7 +27,7 @@ public class Target : MonoBehaviour
 
     private void OnDisable()
     {
-        InputController.OnDragTarget -= DragTarget;
+        GameController.OnDragTarget -= DragTarget;
     }    
 
     void OnMouseDown()

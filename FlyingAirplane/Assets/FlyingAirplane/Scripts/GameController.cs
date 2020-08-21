@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InputController : MonoBehaviour, IDragHandler, IEndDragHandler
+public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public delegate void ActionDrag(Target target);
     public delegate void ActionEndDrag();
