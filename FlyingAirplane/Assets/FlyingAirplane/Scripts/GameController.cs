@@ -17,8 +17,6 @@ public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
     void Start()
     {
         Debug.Log("InputController start");
-        airplane.SetTarget(target);
-        
     }
 
     public void OnDrag(PointerEventData eventData)

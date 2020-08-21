@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 392600524}
   - component: {fileID: 392600523}
   m_Layer: 0
-  m_Name: InputController
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,6 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 140
   speed: 1
+  delay: 1
 --- !u!4 &1752028528
 Transform:
   m_ObjectHideFlags: 0
