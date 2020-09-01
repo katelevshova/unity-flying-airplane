@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\FlyingAirplane\Scripts\Airplane.cs" />
     <Compile Include="Assets\FlyingAirplane\Scripts\GameController.cs" />
+    <Compile Include="Assets\FlyingAirplane\Scripts\MouseLocation.cs" />
     <Compile Include="Assets\FlyingAirplane\Scripts\Target.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Projects/Unity/FlyingAirplaneDemo/FlyingAirplane/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
