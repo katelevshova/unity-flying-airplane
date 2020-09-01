@@ -15,6 +15,20 @@ public class GameController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     public Target target;
     public Airplane airplane;
 
+    public static GameController Instance;
+
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if(Instance != null)
+        {
+            Destroy(this);
+        }
+    }
 
     void Start()
     {
