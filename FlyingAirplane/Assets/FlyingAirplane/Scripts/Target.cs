@@ -23,9 +23,9 @@ public class Target : MonoBehaviour
 
     private void Update()
     {
-        //       transform.Translate(2f * Time.deltaTime, 0f, 0f); // doesn't have direction
+        //transform.Translate(2f * Time.deltaTime, 0f, 0f); // doesn't have direction
         transform.Rotate(0f, 25f * Time.deltaTime, 0f);
-        transform.position += transform.forward * 2f * Time.deltaTime ;
+        //transform.position += transform.forward * 2f * Time.deltaTime ;
     }
 
     private void OnMouseDownTargetHandler()
