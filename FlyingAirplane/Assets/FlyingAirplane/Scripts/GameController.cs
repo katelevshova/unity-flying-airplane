@@ -23,6 +23,14 @@ public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        //Debug.Log("OnDrag");
+
+        //If we don't have a MouseLocation script in the scene or if the position of the mouse isn't valid, leave Update()
+        if (MouseLocation.Instance == null || !MouseLocation.Instance.IsValid)
+            return;
+
+        //NOTE: we marked  MouseLocation whatIsGround as TargetLayer
+
         OnDragTarget?.Invoke(target);
     }
 
