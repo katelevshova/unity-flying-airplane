@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Airplane : MonoBehaviour
 {
-    public float rotationSpeed = 140f;
-    public float speed = 1f;
+    [SerializeField]
+    private float rotationSpeed = 140f;
+    [SerializeField]
+    private float speed = 1f;
     private bool _isNotDraggingMode = true;
+
+    private void Awake()
+    {
+        Debug.Log("[Airplane] Awake");
+    }
 
     void Start()
     {
-        Debug.Log("[Airplane] start");
+        Debug.Log("[Airplane] Start");
         GameController.OnDragTarget += FlyTowards;
         GameController.OnEndDragTarget += FreeFlying; 
     }

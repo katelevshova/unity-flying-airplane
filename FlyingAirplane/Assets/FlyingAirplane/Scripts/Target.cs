@@ -7,12 +7,24 @@ public class Target : MonoBehaviour
     private Vector3 _screenPoint;
     private Vector3 _offset;
 
+    private void Awake()
+    {
+        Debug.Log("[Target] Awake");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("[Target] start");
+        Debug.Log("[Target] Start");
         GameController.OnMouseDownTarget += OnMouseDownTargetHandler;
         GameController.OnDragTarget += OnDragTargetHandler;
+    }
+
+    private void Update()
+    {
+        //       transform.Translate(2f * Time.deltaTime, 0f, 0f); // doesn't have direction
+        transform.Rotate(0f, 25f * Time.deltaTime, 0f);
+        transform.position += transform.forward * 2f * Time.deltaTime ;
     }
 
     private void OnMouseDownTargetHandler()
