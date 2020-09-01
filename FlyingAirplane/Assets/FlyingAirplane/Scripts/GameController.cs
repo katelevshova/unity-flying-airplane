@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(BoxCollider2D))]   // for working OnMouse
-public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
+//[RequireComponent(typeof(BoxCollider2D))]   // for working OnMouse either add BoxCollider2D or add IPointerDownHandler
+public class GameController : MonoBehaviour, IPointerDownHandler, IDragHandler, IEndDragHandler
 {
     public delegate void ActionDrag(Target target);
     public delegate void ActionEndDrag();
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
         if (MouseLocation.Instance == null || !MouseLocation.Instance.IsValid)
             return;
 
-        //NOTE: we marked  MouseLocation whatIsGround as TargetLayer
+        //NOTE: we marked MouseLocation whatIsGround as TargetLayer
 
         OnDragTarget?.Invoke(target);
     }
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour, IDragHandler, IEndDragHandler
         OnEndDragTarget?.Invoke();
     }
 
-    void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
         OnMouseDownTarget?.Invoke();
     }
