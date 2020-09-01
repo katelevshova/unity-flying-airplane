@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Target : MonoBehaviour
@@ -23,9 +24,9 @@ public class Target : MonoBehaviour
 
     private void Update()
     {
-        //transform.Translate(2f * Time.deltaTime, 0f, 0f); // doesn't have direction
+        
         transform.Rotate(0f, 25f * Time.deltaTime, 0f);
-        //transform.position += transform.forward * 2f * Time.deltaTime ;
+        //transform.position += transform.forward * 2f * Time.deltaTime ; //transform.Translate(2f * Time.deltaTime, 0f, 0f); // doesn't have direction
     }
 
     private void OnMouseDownTargetHandler()
