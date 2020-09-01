@@ -31,6 +31,11 @@ public class GameController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
         //NOTE: we marked MouseLocation whatIsGround as TargetLayer
 
+
+        //Find the distance between the mouse and the player
+        //float distance = Vector3.Distance(MouseLocation.Instance.MousePosition, target.transform.position);
+        //Debug.Log("distance=" + distance);
+
         OnDragTarget?.Invoke(target);
     }
 
