@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         {
             Instance = this;
         }
-        else if(Instance != null)
+        else if(Instance != this)
         {
             Destroy(this);
         }

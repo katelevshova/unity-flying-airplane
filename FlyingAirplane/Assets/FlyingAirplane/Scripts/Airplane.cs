@@ -44,7 +44,7 @@ public class Airplane : MonoBehaviour
         else
         {
             Vector3 directionToFace = (target.transform.position - transform.position).normalized;
-            var dotProd = Vector3.Dot(transform.right, directionToFace);
+            float dotProd = Vector3.Dot(transform.right, directionToFace);
 
             transform.rotation *= Quaternion.AngleAxis(dotProd * rotationSpeed * Time.deltaTime, Vector3.up);
 
