@@ -1,4 +1,4 @@
-# unity-flying-airplane
+# Unity - Flying airplane - NavMesh - Demo
 
 TASK:
 
