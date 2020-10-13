@@ -57,14 +57,14 @@ public class Target : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("[Target] OnTriggerEnter");
+        //Debug.Log("[Target] OnTriggerEnter");
 
         //In case other rigidbodies are added to the project, we still want to make sure that the player
         //is the object that entered this collide
         if (other.transform == GameController.Instance.airplane.transform)
         {
             //Record that the airplane is in range
-            Debug.Log("OnTriggerEnter");
+            //Debug.Log("OnTriggerEnter");
             
         }
     }
@@ -72,11 +72,11 @@ public class Target : MonoBehaviour
     //When the player leaves the trigger collider this is called
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("[Target] OnTriggerExit");
+        //Debug.Log("[Target] OnTriggerExit");
         //If the game object leaving this collider
         if (other.transform == GameController.Instance.airplane.transform)
         {
-            Debug.Log("OnTriggerExit");
+            //Debug.Log("OnTriggerExit");
         }
     }
 }
