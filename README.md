@@ -1,4 +1,4 @@
-# Unity - Flying airplane - NavMesh - Demo
+# DESCRIPTION
 
 1. After running the app the airplane needs to be able to fly on its own.
 As soon as user starts to drag a Sphere with a mouse the airplane must change the direction and fly towards the Sphere.
