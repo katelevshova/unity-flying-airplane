@@ -5,9 +5,7 @@ using UnityEngine.AI;
 
 public class AirplaneNavMesh : MonoBehaviour
 {
-	public float Duration;                          //How long the ally stays spawned
-
-	[SerializeField] NavMeshAgent navMeshAgent;     //A reference to the ally's navmesh agent
+	[SerializeField] NavMeshAgent navMeshAgent;     
 
 	void Reset()
 	{
